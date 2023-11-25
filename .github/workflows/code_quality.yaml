@@ -13,10 +13,10 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Flutter
-        uses: flutter-actions/setup-flutter@2
+        uses: subosito/flutter-action@v2
         with:
           channel: stable
-          version: ${{ vars.FLUTTER_SDK_VERSION }}
+          flutter-version: ${{ vars.FLUTTER_SDK_VERSION }}
 
       - name: Install Dependencies
         run: flutter pub get
