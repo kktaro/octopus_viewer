@@ -1,0 +1,25 @@
+name: OctopusViewer
+packages:
+  - packages/*
+repository: https://github.com/kktaro/octopus_viewer
+sdkPath: .fvm/flutter_sdk
+scripts:
+  lint: 
+    run: melos run analyze && melos run format:lib && melos run format:test
+    description: Run all static analysis checks. 
+
+  analyze: 
+    run: melos exec --fail-fast -- "dart analyze ."
+    description: Run `dart analyze .` in all packages.
+
+  format:lib: 
+    run: melos exec --fail-fast -- "dart format -o none --set-exit-if-changed ./lib"
+    description: Run `dart format -o none --set-exit-if-changed ./lib` in all packages.
+
+  format:test:
+    run: melos exec --fail-fast -- "dart format -o none --set-exit-if-changed ./test"
+    description: Run `dart format -o none --set-exit-if-changed ./test` in all packages.
+
+  build_runnber:
+    run: melos exec -- "flutter pub run build_runner build -d"
+    description: Run 'flutter pub run build_runner build -d' in all packages.
