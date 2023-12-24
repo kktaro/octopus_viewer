@@ -6,17 +6,20 @@
     "configurations": [
         {
             "name": "octopus_viewer",
+            "program": "./packages/app/lib/main.dart",
             "request": "launch",
             "type": "dart"
         },
         {
             "name": "octopus_viewer (profile mode)",
+            "program": "./packages/app/lib/main.dart",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
             "name": "octopus_viewer (release mode)",
+            "program": "./packages/app/lib/main.dart",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
