@@ -13,18 +13,24 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Flutter
+        id: flutter-action
         uses: subosito/flutter-action@v2
         with:
           channel: stable
           flutter-version: ${{ vars.FLUTTER_SDK_VERSION }}
+          cache: true
 
       - name: Setup Melos
         uses: bluefireteam/melos-action@v3
         with:
           melos-version: ${{ vars.MELOS_VERSION }}
+          run-bootstrap: false
+
+      - name: Run Melos bootstrap
+        run: melos bs --sdk-path ${{steps.flutter-action.outputs.CACHE-PATH}}
 
       - name: Run Lint
-        run: melos run lint
+        run: melos run lint --sdk-path ${{steps.flutter-action.outputs.CACHE-PATH}}
 
       - name: Run Test
-        run: melos run test
+        run: melos run test --sdk-path ${{steps.flutter-action.outputs.CACHE-PATH}}
