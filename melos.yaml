@@ -5,7 +5,7 @@ repository: https://github.com/kktaro/octopus_viewer
 sdkPath: .fvm/flutter_sdk
 scripts:
   lint: 
-    run: melos run analyze && melos run format_check:lib && melos run format_check:test
+    run: melos run analyze && melos run analyze_riverpod && melos run format_check:lib && melos run format_check:test
     description: Run all static analysis checks. 
 
   format:
@@ -19,6 +19,9 @@ scripts:
   analyze: 
     run: melos exec --fail-fast -- "dart analyze ."
     description: Run `dart analyze .` in all packages.
+
+  analyze_riverpod:
+    run: melos exec --fail-fast -- "dart run custom_lint"
 
   format:lib:
     run: melos exec -- "dart format ./lib"
