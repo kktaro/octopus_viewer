@@ -12,6 +12,10 @@ scripts:
     run: melos run format:lib && melos run format:test
     description: Run format for all files.
 
+  test:
+    run: melos exec --fail-fast -- "flutter test"
+    description: Run test for all packages.
+
   analyze: 
     run: melos exec --fail-fast -- "dart analyze ."
     description: Run `dart analyze .` in all packages.
