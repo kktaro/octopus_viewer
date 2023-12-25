@@ -1,6 +1,6 @@
 name: OctopusViewer
 packages:
-  - packages/*
+  - packages/**
 repository: https://github.com/kktaro/octopus_viewer
 sdkPath: .fvm/flutter_sdk
 scripts:
@@ -32,6 +32,6 @@ scripts:
     run: melos exec --fail-fast -- "dart format -o none --set-exit-if-changed ./test"
     description: Run `dart format -o none --set-exit-if-changed ./test` in all packages.
 
-  build_runnber:
+  build_runner:
     run: melos exec -- "flutter pub run build_runner build -d"
     description: Run 'flutter pub run build_runner build -d' in all packages.
