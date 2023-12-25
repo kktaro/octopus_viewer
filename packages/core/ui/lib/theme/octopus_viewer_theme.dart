@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'generated/theme.g.dart';
+part 'octopus_viewer_theme.g.dart';
 
 @riverpod
-ThemeData theme(ThemeRef ref) {
+ThemeData octopusViewerTheme(OctopusViewerThemeRef ref) {
   final baseTheme = ThemeData(
     brightness: Brightness.light,
-    colorSchemeSeed: Colors.purple,
+    colorSchemeSeed: const Color(0xFFF050F8),
   );
 
   return baseTheme.copyWith(

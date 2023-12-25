@@ -13,25 +13,24 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Flutter
+        id: flutter-action
         uses: subosito/flutter-action@v2
         with:
           channel: stable
           flutter-version: ${{ vars.FLUTTER_SDK_VERSION }}
+          cache: true
 
-      - name: Install Dependencies
-        run: flutter pub get
+      - name: Setup Melos
+        uses: bluefireteam/melos-action@v3
+        with:
+          melos-version: ${{ vars.MELOS_VERSION }}
+          run-bootstrap: false
 
-      - name: Flutter analyze
-        run: flutter analyze
+      - name: Run Melos bootstrap
+        run: melos bs --sdk-path ${{steps.flutter-action.outputs.CACHE-PATH}}
 
-      - name: Dart lib format
-        run: dart format -o none --set-exit-if-changed ./lib
+      - name: Run Lint
+        run: melos run lint --sdk-path ${{steps.flutter-action.outputs.CACHE-PATH}}
 
-      - name: Dart test format
-        run: dart format -o none --set-exit-if-changed ./test
-
-      - name: Flutter Riverpod lint
-        run: dart run custom_lint
-
-      - name: Flutter test
-        run: flutter test
+      - name: Run Test
+        run: melos run test --sdk-path ${{steps.flutter-action.outputs.CACHE-PATH}}
