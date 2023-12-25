@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:octopus_viewer/ui/home/home_screen.dart';
-import 'package:octopus_viewer/ui/login/login_screen.dart';
+import 'package:home/home_screen.dart';
+import 'package:login/login_screen.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'generated/router.g.dart';
@@ -26,7 +26,9 @@ GoRouter router(RouterRef ref) {
 class HomeRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return const HomeScreen();
+    return HomeScreen(
+      onLogout: () => LoginRoute().go(context),
+    );
   }
 }
 
@@ -34,6 +36,8 @@ class HomeRoute extends GoRouteData {
 class LoginRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return const LoginScreen();
+    return LoginScreen(
+      onLogin: () => HomeRoute().go(context),
+    );
   }
 }

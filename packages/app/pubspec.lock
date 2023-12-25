@@ -352,6 +352,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
+  home:
+    dependency: "direct main"
+    description:
+      path: "../feature/home"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   hotreloader:
     dependency: transitive
     description:
@@ -416,6 +423,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  login:
+    dependency: "direct main"
+    description:
+      path: "../feature/login"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   matcher:
     dependency: transitive
     description:
