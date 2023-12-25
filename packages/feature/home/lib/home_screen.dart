@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:octopus_viewer/ui/router/router.dart';
+
+typedef OnLogout = void Function();
 
 class HomeScreen extends ConsumerWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({
+    required this.onLogout,
+    super.key,
+  });
+  final OnLogout onLogout;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -13,7 +18,7 @@ class HomeScreen extends ConsumerWidget {
       ),
       body: Center(
         child: OutlinedButton(
-          onPressed: () => LoginRoute().go(context),
+          onPressed: onLogout,
           child: const Text('Go Login'),
         ),
       ),
