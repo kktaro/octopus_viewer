@@ -21,7 +21,7 @@ scripts:
     description: Run `dart analyze .` in all packages.
 
   analyze_riverpod:
-    run: melos exec --fail-fast -- "dart run custom_lint"
+    run: melos exec --ignore="value" --fail-fast -- "dart run custom_lint"
 
   format:lib:
     run: melos exec -- "dart format ./lib"
