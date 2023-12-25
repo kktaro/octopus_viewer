@@ -18,20 +18,13 @@ jobs:
           channel: stable
           flutter-version: ${{ vars.FLUTTER_SDK_VERSION }}
 
-      - name: Install Dependencies
-        run: flutter pub get
+      - name: Setup Melos
+        uses: bluefireteam/melos-action@v3
+        with:
+          melos-version: ${{ vars.MELOS_VERSION }}
 
-      - name: Flutter analyze
-        run: flutter analyze
+      - name: Run Lint
+        run: melos run lint
 
-      - name: Dart lib format
-        run: dart format -o none --set-exit-if-changed ./lib
-
-      - name: Dart test format
-        run: dart format -o none --set-exit-if-changed ./test
-
-      - name: Flutter Riverpod lint
-        run: dart run custom_lint
-
-      - name: Flutter test
-        run: flutter test
+      - name: Run Test
+        run: melos run test
