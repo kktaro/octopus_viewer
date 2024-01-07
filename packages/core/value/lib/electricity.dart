@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:value/electricity_bill.dart';
+import 'package:value/electricity_unit.dart';
 import 'package:value/end_date.dart';
 import 'package:value/start_date.dart';
 
@@ -13,8 +15,7 @@ class Electricity with _$Electricity {
   }) = _Electricity;
   const Electricity._();
 
-  // TODO(kktaro): ちゃんと計算する
-  double calcBill() {
-    return usage * 24.50;
+  ElectricityBill calcBill(ElectricityUnit unit) {
+    return ElectricityBill(usage * 24.50);
   }
 }
