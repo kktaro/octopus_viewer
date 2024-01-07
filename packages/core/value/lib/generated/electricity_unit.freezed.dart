@@ -19,10 +19,10 @@ mixin _$ElectricityUnit {
   /// 0 ~ 120kWhの電気料金単価
   double get firstStageUnit => throw _privateConstructorUsedError;
 
-  /// 121 ~ 300kWhの電気料金単価
+  /// 120 ~ 300kWhの電気料金単価
   double get secondStageUnit => throw _privateConstructorUsedError;
 
-  /// 301kWh以上の電気料金単価
+  /// 300kWh以上の電気料金単価
   double get thirdStageUnit => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -130,11 +130,11 @@ class _$ElectricityUnitImpl implements _ElectricityUnit {
   @override
   final double firstStageUnit;
 
-  /// 121 ~ 300kWhの電気料金単価
+  /// 120 ~ 300kWhの電気料金単価
   @override
   final double secondStageUnit;
 
-  /// 301kWh以上の電気料金単価
+  /// 300kWh以上の電気料金単価
   @override
   final double thirdStageUnit;
 
@@ -180,11 +180,11 @@ abstract class _ElectricityUnit implements ElectricityUnit {
   double get firstStageUnit;
   @override
 
-  /// 121 ~ 300kWhの電気料金単価
+  /// 120 ~ 300kWhの電気料金単価
   double get secondStageUnit;
   @override
 
-  /// 301kWh以上の電気料金単価
+  /// 300kWh以上の電気料金単価
   double get thirdStageUnit;
   @override
   @JsonKey(ignore: true)

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'octopus_viewer_theme.g.dart';
+part '../generated/theme/octopus_viewer_theme.g.dart';
 
 @riverpod
 ThemeData octopusViewerTheme(OctopusViewerThemeRef ref) {

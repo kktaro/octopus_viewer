@@ -4,7 +4,7 @@ import 'package:value/password.dart';
 
 abstract interface class AuthRepository {
   /// ログイン状態か
-  bool isLogin(OctopusUser octopusUser);
+  bool isLogin();
 
   /// 必要であればログインする
   OctopusUser loginIfNeeded({

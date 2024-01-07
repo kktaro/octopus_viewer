@@ -22,6 +22,8 @@ dependencies:
   riverpod_annotation: ^2.3.2
   ui:
     path: ../core/ui/
+  usecase:
+    path: ../feature/usecase/
 
 dev_dependencies:
   build_runner: ^2.4.6

@@ -3,14 +3,27 @@ import 'package:go_router/go_router.dart';
 import 'package:home/home_screen.dart';
 import 'package:login/login_screen.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:usecase/usecase/is_login_check_usecase.dart';
 
 part 'generated/router.g.dart';
 
 @riverpod
 GoRouter router(RouterRef ref) {
+  final isLogin = ref.watch(isLoginCheckUsecaseProvider);
+
   return GoRouter(
     initialLocation: '/',
     routes: $appRoutes,
+    redirect: (context, state) {
+      final isLoginResult = isLogin.valueOrNull;
+      if (isLoginResult == null) return null;
+
+      if (isLoginResult) {
+        return '/';
+      } else {
+        return '/login';
+      }
+    },
   );
 }
 

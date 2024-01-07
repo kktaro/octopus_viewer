@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:octopus_viewer/ui/router/router.dart';
+import 'package:octopus_viewer/router/router.dart';
 import 'package:ui/theme/octopus_viewer_theme.dart';
 
 class App extends ConsumerWidget {
