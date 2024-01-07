@@ -1,8 +1,14 @@
-# melos_managed_dependency_overrides: home,login,ui
+# melos_managed_dependency_overrides: domain,home,login,ui,usecase,value
 dependency_overrides:
+  domain:
+    path: ../core/domain
   home:
     path: ../feature/home
   login:
     path: ../feature/login
   ui:
     path: ../core/ui
+  usecase:
+    path: ../feature/usecase
+  value:
+    path: ../core/value
