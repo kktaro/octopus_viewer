@@ -1,6 +1,0 @@
-# melos_managed_dependency_overrides: domain,value
-dependency_overrides:
-  domain:
-    path: ../../core/domain
-  value:
-    path: ../../core/value
